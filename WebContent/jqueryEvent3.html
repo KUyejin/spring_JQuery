@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title> jQuery </title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			//가장 대표적인 jquery.
+			$(document).ready(function(){
+				
+				$("#sbmBtn").click(function() {
+					if($("#uId").val() == "") {
+						alert("user id blank!!");
+					} else if($("#uPw").val() == "") {
+						alert("user pw blank!!");
+					} else {
+						alert("login ok!!");
+						$("#loginForm").submit();   //submit누르면, 해당 아이디와 pw를 아래 url로 보낸다.
+					}
+				});
+				
+				$("#resBtn").click(function() {
+					alert("reset ok!!");
+					$("#loginForm")[0].reset();
+				});
+				
+			});
+			
+		</script>
+
+	</head>
+	
+	<body>
+		
+		<form id="loginForm" action="http://www.google.com">
+			USER ID : <input id="uId" type="text" name="uId"><br>
+			USER PW : <input id="uPw" type="password" name="upw"><br>
+			<input id="sbmBtn" type="button" value="SUBMIT">
+			<input id="resBtn" type="button" value="RESET"> <!-- 자바스크립트 내지   로 처리하겠다. -->
+		</form>
+		
+	</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title> jQuery </title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			
+			$(document).ready(function(){
+				
+				$("#loginForm").submit(function(event) {
+					if($("#uId").val() == "") {
+						alert("user id blank!!");
+						//form 안에 있는 input 등을 전송한다던가 그러한 동작이 있는데, 
+						//e.prevnetDefault는 그 다음 action을 취하지 못하게 중단. 동작을 중단시킨다.
+						event.preventDefault();
+					} else if($("#uPw").val() == "") {
+						alert("user pw blank!!");
+						event.preventDefault();
+					} else {
+						alert("login ok!!");
+					}
+				});
+				
+			});
+			
+		</script>
+
+	</head>
+	
+	<body>
+		
+		<form id="loginForm" action="http://www.google.com">
+			USER ID : <input id="uId" type="text" name="uId"><br>
+			USER PW : <input id="uPw" type="password" name="upw"><br>
+			<input id="sbmBtn" type="submit" value="SUBMIT">
+			<input id="resBtn" type="reset" value="RESET">
+		</form>
+		
+	</body>
+
+</html>
